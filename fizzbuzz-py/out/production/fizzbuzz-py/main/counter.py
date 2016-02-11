@@ -1,41 +1,37 @@
-class FizzBuzzCounter():
+import sys
 
-    def ismultipleof(self, i, n):
-        if i % n == 0:
-            return True
-        return False
+class FizzBuzzCounter:
 
-    def printAndReturnFizz(self):
-        fizz = "fizz"
-        print fizz
-        return fizz
+    def isItMultipleOfN(self, it, n):
+        return it % n == 0
 
-    def printAndReturnBuzz(self):
-        buzz = "buzz"
-        print buzz
-        return buzz
+    def getFizz(self):
+        return "fizz"
 
-    def printAndReturnFizzBuzz(self):
-        fizzbuzz = "fizzbuzz"
-        print fizzbuzz
-        return fizzbuzz
+    def getBuzz(self):
+        return "buzz"
+
+    def getFizzBuzz(self):
+        return "fizzbuzz"
 
     def count1to100(self):
-        count = ""
-        for i in range(1, 101):
-            isMultipleOf3 = self.ismultipleof(i, 3)
-            isMultipleOf5 = self.ismultipleof(i, 5)
+        msg = ""
+        for it in range(1, 101):
+            isMultipleOf3 = self.isItMultipleOfN(it, 3)
+            isMultipleOf5 = self.isItMultipleOfN(it, 5)
 
             if isMultipleOf3 & isMultipleOf5:
-                count += " " + self.printAndReturnFizzBuzz()
+                msg = self.getFizzBuzz()
             elif isMultipleOf3:
-                count += " " + self.printAndReturnFizz()
+                msg = self.getFizz()
             elif isMultipleOf5:
-                count += " " + self.printAndReturnBuzz()
+                msg = self.getBuzz()
             else:
-                count += " " + str(i)
-                print i
-        return count
+                msg = str(it)
+
+            print(msg)
 
 
 
+counter = FizzBuzzCounter()
+counter.count1to100()
