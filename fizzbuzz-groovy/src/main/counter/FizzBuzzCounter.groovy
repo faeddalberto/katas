@@ -12,38 +12,16 @@ class FizzBuzzCounter {
     }
 
     def process = {
-        boolean multipleOf3 = isMultipleOf(it, 3)
-        boolean multipleOf5 = isMultipleOf(it, 5)
+        boolean multipleOf3 = it % 3 == 0
+        boolean multipleOf5 = it % 5 == 0
         if (multipleOf3 && multipleOf5) {
-            printFizzBuzz()
+            println "fizzbuzz"
         } else if (multipleOf3) {
-            printFizz()
+            println "fizz"
         } else if (multipleOf5) {
-            printBuzz()
+            println "buzz"
         } else {
-            println(it)
+            println it
         }
-    }
-
-    boolean isMultipleOf(int i, int n) {
-        return i % n == 0
-    }
-
-    String printFizzBuzz() {
-        String fizzbuzz = "fizzbuzz"
-        println(fizzbuzz);
-        return fizzbuzz
-    }
-
-    String printFizz() {
-        String fizz = "fizz"
-        println(fizz);
-        return fizz
-    }
-
-    String printBuzz() {
-        String buzz = "buzz"
-        println(buzz);
-        return buzz
     }
 }
